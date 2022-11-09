@@ -40,12 +40,13 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
     // Slice C: Call findCountries with continent from formData
+    findCountries(formData.get('continent'));
 });
 
 /* Display Functions */
 function displayCountries() {
     //Slice A: reset the countries List
-    countryList.textContent = '';
+    countryList.innerHTML = '';
 
     for (const country of countries) {
         // Slice A: Call imported render countries function and append to list
